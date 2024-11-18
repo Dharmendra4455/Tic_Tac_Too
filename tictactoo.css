@@ -1,0 +1,43 @@
+.container{
+    border: 2px solid rgb(17, 4, 4);
+    height: 35vw;
+    width: 36vw;
+    background-color:white;
+}
+.topbar{
+    display: flex;
+    gap:18vw;
+}
+.box{
+  height: 8vw;
+  width: 8vw;
+  border: 2px solid rgb(250, 250, 250);
+  background-color: rgb(85, 81, 81);
+  color: white;
+  font-weight:500;
+  display:flex;
+  font-size: 5vw;
+  justify-content: center;
+  align-items: center;
+}
+.box:hover{
+    background-color: rgb(61, 58, 58);
+}
+.innercontainerbox{
+    margin-left: 5.5vw;
+}
+.innercontainer1{
+    display: flex;
+    border: 2px solid white;
+}
+.turns{
+    
+    margin-top: 1vw;
+    font-weight: bold;
+    text-align: center;
+}
+.winlost{
+    
+    margin-top: 2vw;
+    text-align: center;
+}
