@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="tictactoo.css">
+</head>
+<body>
+      <div class="container"> 
+        <div class="topbar">
+            <div class="player1" style="margin-left:2vw;"> Player1</div>
+            <div class="player2"> player2</div>
+        </div>
+        <div class="innercontainerbox">
+            <div class="innercontainer1">
+            <div class="box" onclick="press('topleft')" id="topleft"></div>
+            <div class="box" onclick="press('topmiddle')" id="topmiddle"></div>
+            <div class="box" onclick="press('topright')" id="topright"></div>
+            </div>
+            <div class="innercontainer1">
+            <div class="box" onclick="press('middleleft')" id="middleleft"></div>
+            <div class="box" onclick="press('middlemiddle')" id="middlemiddle"></div>
+            <div class="box" onclick="press('middleright')" id="middleright"></div>
+            </div>
+             <div class="innercontainer1">
+            <div class="box" onclick="press('bottomleft')" id="bottomleft"></div>
+            <div class="box" onclick="press('bottommiddle')" id="bottommiddle"></div>
+            <div class="box" onclick="press('bottomright')" id="bottomright"></div>
+            </div>
+        </div>
+        <div class="turns">Player X</div>
+        <div class="winlost">Player X Win</div>
+    </div>
+    <script  src="tic.js"></script>
+</body>
+</html>
