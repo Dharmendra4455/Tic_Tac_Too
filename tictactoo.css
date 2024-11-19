@@ -1,24 +1,64 @@
+.tic{
+    color: red;
+
+}
+.tac{
+    color: lawngreen;
+    font-size: 4.5vw;
+}
+.toe{
+    color: blue;
+    font-size: 4vw;
+}
+.tictactoe{
+    font-weight:600;
+    font-size: 5vw;
+    font-family:sans-serif;
+}
 .container{
     border: 2px solid rgb(17, 4, 4);
-    height: 35vw;
-    width: 36vw;
+    height: 45vw;
+    width: 38vw;
     background-color:white;
+    overflow:hidden;
 }
+.player1{
+    color: red;
+    font-size: 2vw;
+    font-weight: 600;
+    -webkit-text-stroke: 1px blue;
+}
+.vs{
+    color: rgb(241, 12, 100);
+    font-size: 2vw;
+    font-weight: 600;
+    -webkit-text-stroke: 1px rgb(255, 0, 0);
+}
+.player2{  
+    color: blue;
+    font-size: 2vw;
+    font-weight: 600;
+    -webkit-text-stroke: 1px rgb(255, 0, 0);
+    
+}
+
 .topbar{
     display: flex;
-    gap:18vw;
+    gap:5vw;
 }
 .box{
   height: 8vw;
   width: 8vw;
   border: 2px solid rgb(250, 250, 250);
-  background-color: rgb(85, 81, 81);
-  color: white;
-  font-weight:500;
+  background-color: rgb(146, 142, 142);
+  color: rgb(2, 19, 253);
+  font-weight:600;
   display:flex;
   font-size: 5vw;
   justify-content: center;
   align-items: center;
+  font-family:sans-serif;
+  -webkit-text-stroke: 1px rgb(255, 0, 0);
 }
 .box:hover{
     background-color: rgb(61, 58, 58);
@@ -31,13 +71,16 @@
     border: 2px solid white;
 }
 .turns{
-    
+    font-size: 2vw;
     margin-top: 1vw;
     font-weight: bold;
     text-align: center;
 }
 .winlost{
-    
-    margin-top: 2vw;
+    font-size: 2vw;
+    margin-top: 1vw;
+    font-weight: bold;
     text-align: center;
+    color: lawngreen;
+    display: none;
 }
