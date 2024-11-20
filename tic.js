@@ -87,7 +87,7 @@ var bottomright=document.querySelector("#bottomright")
 
 var turns=document.querySelector(".turns");
 var winlost=document.querySelector(".winlost");
-var turn="X",gameover=1;
+var turn="X",gameover=1,tie=1;
  turns.innerHTML=x+"'s turn"
 var topleft1=1,topmiddle1=1,topright1=1;
 var middleleft1=1,middlemiddle1=1,middleright1=1;
@@ -191,8 +191,14 @@ function press(p){
       else if(topleft1==0 && topmiddle1==0 && topright1==0 &&              //Game over msg if all boxes occupied by O or X
         middleleft1==0 && middlemiddle1==0 && middleright1==0 &&
         bottomleft1==0 && bottommiddle1==0 && bottomright1==0 )
-      { alert("GAME OVER")
-         document.querySelector(".turns").innerHTML="Match Tie!!" 
+      {  
+        
+        tie=0;
+         
+         document.querySelector(".turns").innerHTML="Match Tie!!"
+         document.querySelector(".turns").style.color="yellow"
+         alert("GAME OVER")
+        
           gameover=0;
           //alert("GAME OVER")
           document.querySelector(".newgame").style.display="block"
@@ -207,8 +213,9 @@ function press(p){
                                             /*if gameover var==0 it denotes all boxes occupied 
                                                 and game over then instead of showing player turn 
                                                 show GAME OVER*/
-    else{                                      
-        turns.innerHTML=" " 
+    else{
+       if(tie!=0)
+        turns.innerHTML=""
         topleft1=0 
         topmiddle1=0 
         topright1=0              
@@ -223,8 +230,11 @@ function press(p){
        // location.reload()
     }
 }
+
+
 function turncheck(turn)
-{                        
+{ 
+                      
    if(turn=="X"){
      turn="O";
      turns.innerHTML=y+"' turn"                        //one by one X and O Change 
@@ -236,6 +246,7 @@ function turncheck(turn)
     turns.style.color="red"
    }
    return turn;
+  
 }
 var xscore=0,yscore=0;
 function check(turn){ 
