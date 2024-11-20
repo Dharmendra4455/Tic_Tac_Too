@@ -1,14 +1,18 @@
+
 .tic{
     color: red;
     font-size: 4vw;
+    -webkit-text-stroke: 1.2px rgb(255, 7, 160);
 }
 .tac{
     color: lawngreen;
     font-size: 4vw;
+    -webkit-text-stroke: 1.2px rgb(0, 255, 42);
 }
 .toe{
     color: blue;
     font-size: 4vw;
+    -webkit-text-stroke: 1.2px rgb(4, 0, 255);
 }
 .tictactoe{
     font-weight:600;
@@ -16,8 +20,11 @@
     font-family:sans-serif;
 }
 .container{
+   /* background-image: url("celebration2.gif");*/
+    background-repeat:no-repeat;
+    background-size:cover;
     border: 2px solid rgb(17, 4, 4);
-    height: 45vw;
+    height: 42vw;
     width: 38vw;
     background-color:white;
     overflow:hidden;
@@ -47,6 +54,7 @@
     gap:5vw;
 }
 .box{
+  /*opacity: .5;*/
   height: 8vw;
   width: 8vw;
   border: 2px solid rgb(250, 250, 250);
@@ -64,10 +72,12 @@
     background-color: rgb(61, 58, 58);
 }
 .innercontainerbox{
+   /* opacity: 0.3;*/
     margin-left: 5.5vw;
 }
 .innercontainer1{
     display: flex;
+   
     border: 2px solid white;
 }
 .turns{
@@ -80,8 +90,10 @@
     font-size: 2vw;
     margin-top: 1vw;
     font-weight: bold;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     text-align: center;
-    color: lawngreen;
+    color: rgb(181, 0, 252);
+    -webkit-text-stroke: 1.5px aqua;
     visibility: hidden;
 }
 .score{
@@ -90,4 +102,25 @@
     font-size:1.6vw;
     font-weight: bold;
     justify-content: space-around;
+}
+.scorex{
+    display: none;
+}
+.scorey{
+    display: none;
+}
+.newgame{
+    margin-top: 1.1vw;
+    font-size: 1.2vw;
+    font-weight: bold;
+    padding: .3vw;
+    padding-left: 1.2vw;
+    padding-right: 1.2vw;
+    margin-left: 40%;
+    outline:none;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background-color: rgb(251, 255, 0);
+    border: 2px solid rgb(17, 231, 231);
+    border-radius: .8vw;
+    display:none;
 }
