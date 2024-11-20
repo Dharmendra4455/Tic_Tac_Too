@@ -25,10 +25,10 @@ var colorarr=["red","green","blue","indigo","orange","yellow","violet"
 
 //prompt input Name +++++++++++++++++
 
-//var x=prompt("Enter Player X Name");
-//var y=prompt("Enter Player O Name");
-var x=null;    //default pass
-var y=null;
+var x=prompt("Enter Player X Name");
+var y=prompt("Enter Player O Name");
+//var x=null;    //default pass
+//var y=null;
 console.log(x,y);
 playerx=document.querySelector(".player1")
 playery=document.querySelector(".player2")
@@ -43,24 +43,26 @@ y="Y";
 else if(x.length<=10 && y.length<=10)
  {
          
-    playerx.innerHTML=x;
+     playerx.innerHTML=x;
      playery.innerHTML=y;
  }
              
 else if(x.length>10 && y.length<=10)
-{
-     playerx.innerHTML=x.slice(0,10);
+{   x=x.slice(0,10);
+     playerx.innerHTML=x
      playery.innerHTML=y;
  }
  else if(y.length>10 && x.length<=10)
- {
-   playery.innerHTML=y.slice(0,10);
+ {   y=y.slice(0,10);
+     playery.innerHTML=y
      playerx.innerHTML=x;
 }
 else if(x.length>10 && y.length>10)
 {
-  playerx.innerHTML=x.slice(0,10);
-  playery.innerHTML=y.slice(0,10);
+    x=x.slice(0,10);
+    y=y.slice(0,10);
+  playerx.innerHTML=x;
+  playery.innerHTML=y;
  }
 else{
     document.querySelector(".topbar").style.gap="13vw"
@@ -188,22 +190,37 @@ function press(p){
       }
       else if(topleft1==0 && topmiddle1==0 && topright1==0 &&              //Game over msg if all boxes occupied by O or X
         middleleft1==0 && middlemiddle1==0 && middleright1==0 &&
-        bottomleft1==0 && bottommiddle1==0 && bottomright1==0){
+        bottomleft1==0 && bottommiddle1==0 && bottomright1==0 )
+      { alert("GAME OVER")
+         document.querySelector(".turns").innerHTML="Match Tie!!" 
+          gameover=0;
+          //alert("GAME OVER")
+          document.querySelector(".newgame").style.display="block"
+           //location.reload()
            
-           gameover=0;
-         //  location.reload()
       }
    else{
       alert("Wrong Selection!!")
    }  
    if(gameover!=0)
     turn=turncheck(turn);
-                                             /*if gameover var==0 it denotes all boxes occupied 
+                                            /*if gameover var==0 it denotes all boxes occupied 
                                                 and game over then instead of showing player turn 
                                                 show GAME OVER*/
     else{                                      
-        turns.innerHTML="GAME OVER" 
-        alert("GAME OVER")
+        turns.innerHTML=" " 
+        topleft1=0 
+        topmiddle1=0 
+        topright1=0              
+        middleleft1=0
+        middlemiddle1=0
+        middleright1=0 
+        bottomleft1=0 
+        bottommiddle1=0 
+        bottomright1=0
+        
+        //alert("GAME OVER")
+       // location.reload()
     }
 }
 function turncheck(turn)
@@ -224,131 +241,221 @@ var xscore=0,yscore=0;
 function check(turn){ 
     //alert(topleft.innerHTML);
  if(turn==topleft.innerHTML && turn==topmiddle.innerHTML && turn==topright.innerHTML) {
-     if(turn=="X")
+     if(turn=="X" && xscore==0)
      {
-       xscore++;
-       document.querySelector(".scorex").innerHTML="ScoreX: "+xscore;
+        xscore++;
+        document.querySelector(".scorex").innerHTML="ScoreX: "+xscore;
+        winlost.style.visibility="visible"
+        winlost.innerHTML= x+" Win"
+        winlost.style.fontSize="4.5vw"
+        document.querySelector(".innercontainerbox").style.opacity=".4"
+        document.querySelector(".container").style.backgroundImage="url('celebration2.gif')"
+        document.querySelector(".newgame").style.display="block"
      } 
-     else
+     else if(yscore==0)
      {
-       yscore++;
-       document.querySelector(".scorey").innerHTML="ScoreY: "+yscore;
+        yscore++;
+        document.querySelector(".scorey").innerHTML="ScoreY: "+yscore;
+        winlost.style.visibility="visible"
+        winlost.innerHTML= y+" Win"
+        winlost.style.fontSize="4.5vw"
+        document.querySelector(".innercontainerbox").style.opacity=".4"
+        document.querySelector(".container").style.backgroundImage="url('celebration2.gif')"
+        document.querySelector(".newgame").style.display="block"
      }
-    winlost.style.dvisibility="visible"
-    winlost.innerHTML="Player "+turn+" win";
+   
+    gameover=0;
  }
  else if(turn==topleft.innerHTML && turn==middleleft.innerHTML && turn==bottomleft.innerHTML){
-  if(turn=="X")
+  if(turn=="X" && xscore==0)
   {
     xscore++;
     document.querySelector(".scorex").innerHTML="ScoreX: "+xscore;
+    winlost.style.visibility="visible"
+    winlost.innerHTML= x+" Win"
+    winlost.style.fontSize="4.5vw"
+    document.querySelector(".innercontainerbox").style.opacity=".4"
+    document.querySelector(".container").style.backgroundImage="url('celebration2.gif')"
+    document.querySelector(".newgame").style.display="block"
   } 
-  else
+  else if(yscore==0)
   {
     yscore++;
     document.querySelector(".scorey").innerHTML="ScoreY: "+yscore;
-  }
     winlost.style.visibility="visible"
-    winlost.innerHTML="Player "+turn+" win";
+    winlost.innerHTML= y+" Win"
+    winlost.style.fontSize="4.5vw"
+    document.querySelector(".innercontainerbox").style.opacity=".4"
+    document.querySelector(".container").style.backgroundImage="url('celebration2.gif')"
+    document.querySelector(".newgame").style.display="block"
+  }
+   
+    gameover=0;
  }
  else if(turn==topleft.innerHTML && turn==middlemiddle.innerHTML && turn==bottomright.innerHTML){
-  if(turn=="X")
+  if(turn=="X" && xscore==0)
   {
     xscore++;
     document.querySelector(".scorex").innerHTML="ScoreX: "+xscore;
+    winlost.style.visibility="visible"
+    winlost.innerHTML= x+" Win"
+    winlost.style.fontSize="4.5vw"
+    document.querySelector(".innercontainerbox").style.opacity=".4"
+    document.querySelector(".container").style.backgroundImage="url('celebration2.gif')"
+    document.querySelector(".newgame").style.display="block"
   } 
-  else
+  else if(yscore==0)
   {
     yscore++;
     document.querySelector(".scorey").innerHTML="ScoreY: "+yscore;
+    winlost.style.visibility="visible"
+    winlost.innerHTML= y+" Win"
+    winlost.style.fontSize="4.5vw"
+    document.querySelector(".innercontainerbox").style.opacity=".4"
+    document.querySelector(".container").style.backgroundImage="url('celebration2.gif')"
+    document.querySelector(".newgame").style.display="block"
   }
   
-    winlost.style.visibility="visible"
-    winlost.innerHTML="Player "+turn+" win"
+   
+    gameover=0;
 }
 else if(turn==topmiddle.innerHTML && turn==middlemiddle.innerHTML && turn==bottommiddle.innerHTML){
-  if(turn=="X")
+  if(turn=="X" && xscore==0)
   {
     xscore++;
     document.querySelector(".scorex").innerHTML="ScoreX: "+xscore;
+    winlost.style.visibility="visible"
+    winlost.innerHTML= x+" Win"
+    winlost.style.fontSize="4.5vw"
+    document.querySelector(".innercontainerbox").style.opacity=".4"
+    document.querySelector(".container").style.backgroundImage="url('celebration2.gif')"
+    document.querySelector(".newgame").style.display="block"
   } 
-  else
+  else if(yscore==0)
   {
     yscore++;
     document.querySelector(".scorey").innerHTML="ScoreY: "+yscore;
-  }
     winlost.style.visibility="visible"
-    winlost.innerHTML="Player "+turn+" win"
+    winlost.innerHTML= y+" Win"
+    winlost.style.fontSize="4.5vw"
+    document.querySelector(".innercontainerbox").style.opacity=".4"
+    document.querySelector(".container").style.backgroundImage="url('celebration2.gif')"
+    document.querySelector(".newgame").style.display="block"
+  }
+   
+    gameover=0;
 }
 else if(turn==middleleft.innerHTML && turn==middlemiddle.innerHTML && turn==middleright.innerHTML){
-  if(turn=="X")
+  if(turn=="X" && xscore==0)
   {
     xscore++;
     document.querySelector(".scorex").innerHTML="ScoreX: "+xscore;
+    winlost.style.visibility="visible"
+    winlost.innerHTML= x+" Win"
+    winlost.style.fontSize="4.5vw"
+    document.querySelector(".innercontainerbox").style.opacity=".4"
+    document.querySelector(".container").style.backgroundImage="url('celebration2.gif')"
+    document.querySelector(".newgame").style.display="block"
   } 
-  else
+  else if(yscore==0)
   {
     yscore++;
     document.querySelector(".scorey").innerHTML="ScoreY: "+yscore;
+    winlost.style.visibility="visible"
+    winlost.innerHTML= y+" Win"
+    winlost.style.fontSize="4.5vw"
+    document.querySelector(".innercontainerbox").style.opacity=".4"
+    document.querySelector(".container").style.backgroundImage="url('celebration2.gif')"
+    document.querySelector(".newgame").style.display="block"
   }
   
-    winlost.style.visibility="visible"
-    winlost.innerHTML="Player "+turn+" win"
+    gameover=0;
 }
 else if(turn==bottomleft.innerHTML && turn==bottommiddle.innerHTML && turn==bottomright.innerHTML){
-  if(turn=="X")
+  if(turn=="X"  && xscore==0)
   {
     xscore++;
     document.querySelector(".scorex").innerHTML="ScoreX: "+xscore;
+    winlost.style.visibility="visible"
+    winlost.innerHTML= x+" Win"
+    winlost.style.fontSize="4.5vw"
+    document.querySelector(".innercontainerbox").style.opacity=".4"
+    document.querySelector(".container").style.backgroundImage="url('celebration2.gif')"
+    document.querySelector(".newgame").style.display="block"
   } 
-  else
+  else if(yscore==0)
   {
     yscore++;
     document.querySelector(".scorey").innerHTML="ScoreY: "+yscore;
+    winlost.style.visibility="visible"
+    winlost.innerHTML= y+" Win"
+    winlost.style.fontSize="4.5vw"
+    document.querySelector(".innercontainerbox").style.opacity=".4"
+    document.querySelector(".container").style.backgroundImage="url('celebration2.gif')"
+    document.querySelector(".newgame").style.display="block"
   }
   
-    winlost.style.visibility="visible"
-    winlost.innerHTML="Player "+turn+" win"
+    gameover=0;
 }
 else if(turn==topright.innerHTML && turn==middleright.innerHTML && turn==bottomright.innerHTML){
-  if(turn=="X")
+  if(turn=="X" && xscore==0)
   {
     xscore++;
     document.querySelector(".scorex").innerHTML="ScoreX: "+xscore;
+    winlost.style.visibility="visible"
+    winlost.innerHTML= x+" Win"
+    winlost.style.fontSize="4.5vw"
+    document.querySelector(".innercontainerbox").style.opacity=".4"
+    document.querySelector(".container").style.backgroundImage="url('celebration2.gif')"
+    document.querySelector(".newgame").style.display="block"
   } 
-  else
+  else if(yscore==0)
   {
     yscore++;
     document.querySelector(".scorey").innerHTML="ScoreY: "+yscore;
+    winlost.style.visibility="visible"
+    winlost.innerHTML= y+" Win"
+    winlost.style.fontSize="4.5vw"
+    document.querySelector(".innercontainerbox").style.opacity=".4"
+    document.querySelector(".container").style.backgroundImage="url('celebration2.gif')"
+    document.querySelector(".newgame").style.display="block"
   }
   
-    winlost.style.visibility="visible"
-    winlost.innerHTML="Player "+turn+" win"
+    gameover=0;
 }
 else if(turn==topright.innerHTML && turn==middlemiddle.innerHTML && turn==bottomleft.innerHTML){
-  if(turn=="X")
+  if(turn=="X" && xscore==0)
   {
     xscore++;
     document.querySelector(".scorex").innerHTML="ScoreX: "+xscore;
+    winlost.style.visibility="visible"
+    winlost.innerHTML= x+" Win"
+    winlost.style.fontSize="4.5vw"
+    document.querySelector(".innercontainerbox").style.opacity=".4"
+    document.querySelector(".container").style.backgroundImage="url('celebration2.gif')"
+    document.querySelector(".newgame").style.display="block"
   } 
-  else
+  else if(yscore==0)
   {
     yscore++;
     document.querySelector(".scorey").innerHTML="ScoreY: "+yscore;
-  }
-  
     winlost.style.visibility="visible"
-    winlost.innerHTML="Player "+turn+" win"
+    winlost.innerHTML= y+" Win"
+    winlost.style.fontSize="4.5vw"
+    document.querySelector(".innercontainerbox").style.opacity=".4"
+    document.querySelector(".container").style.backgroundImage="url('celebration2.gif')"
+    document.querySelector(".newgame").style.display="block"
+  }
+    gameover=0;
 }
 else{
+
    // winlost.style.visibility="visible"     //start showing loose also
    // winlost.innerHTML="Player "+turn+" Loose"  //always on each move check for win 
                                                  //if win condition not satisfied the it always execute
 }
 }
-
-
-
-
-
-//match tie condition + player score + celebration background + gamecount of 5games + score after 5 games
+function newgame(){
+  location.reload()
+ 
+}
