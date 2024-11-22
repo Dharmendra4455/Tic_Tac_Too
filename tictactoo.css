@@ -26,26 +26,29 @@
     border: 2px solid rgb(17, 4, 4);
     height: 42vw;
     width: 38vw;
-    background-color:rgba(103, 105, 102, 0.507);
+    background-color: rgb(146, 142, 142);
+    /*background-color:rgba(103, 105, 102, 0.507);*/
     overflow:hidden;
 }
 .player1{
-    color: red;
+    color: hsl(0, 100%, 50%);
     font-size: 2vw;
-    font-weight: 600;
-    -webkit-text-stroke: 1px blue;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 800;
+    /*-webkit-text-stroke: 1px blue;*/
 }
 .vs{
     color: rgb(241, 12, 100);
     font-size: 2vw;
     font-weight: 600;
-    -webkit-text-stroke: 1px rgb(255, 0, 0);
+   /* -webkit-text-stroke: 1px rgb(255, 0, 0);*/
 }
 .player2{  
     color: blue;
     font-size: 2vw;
-    font-weight: 600;
-    -webkit-text-stroke: 1px rgb(255, 0, 0);
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 800;
+   /* -webkit-text-stroke: 1px rgb(255, 0, 0);*/
     
 }
 
@@ -57,9 +60,9 @@
   /*opacity: .5;*/
   height: 8vw;
   width: 8vw;
-  border: 2px solid rgb(250, 250, 250);
+  border: 3px solid rgb(250, 250, 250);
   background-color: rgb(146, 142, 142);
-  color: rgb(2, 19, 253);
+  color: yellow;
   font-weight:600;
   display:flex;
   font-size: 5vw;
@@ -69,7 +72,9 @@
   -webkit-text-stroke: 1px rgb(255, 0, 0);
 }
 .box:hover{
-    background-color: rgb(61, 58, 58);
+    background-color: rgb(134, 131, 131);
+    transition: 1s ease;
+    box-shadow: -2px 5px 5px rgb(150, 140, 140);
 }
 .innercontainerbox{
    /* opacity: 0.3;*/
@@ -124,7 +129,7 @@
 }
 .dhar{
     display: inline;
-    color: rgba(255, 255, 255, 0.116);
+    color: rgba(240, 236, 236, 0.267);
     float: right;
     margin-right: 1vw;
     margin-top: .6vw;
