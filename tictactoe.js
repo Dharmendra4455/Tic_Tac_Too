@@ -28,10 +28,10 @@ var colorarr=["red","green","blue","indigo","orange","yellow","violet"
 
 //prompt input Name +++++++++++++++++
 
-//var x=prompt("Enter Player X Name");
-//var y=prompt("Enter Player O Name");
-var x=null;    //default pass
-var y=null;
+var x=prompt("Enter Player X Name");
+var y=prompt("Enter Player O Name");
+//var x=null;    //default pass
+//var y=null;
 console.log(x,y);
 playerx=document.querySelector(".player1")
 playery=document.querySelector(".player2")
