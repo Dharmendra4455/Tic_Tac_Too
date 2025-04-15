@@ -1,4 +1,10 @@
 
+.completecontainer{
+    background: #000;
+    display: flex;
+    padding-bottom: 20px;
+    justify-content: center;
+}
 .tic{
     color: red;
     font-size: 4vw;
@@ -16,11 +22,14 @@
 }
 .tictactoe{
     font-weight:600;
-   
+    background: #000;
+    display:flex;
+    justify-content: center;
     font-family:sans-serif;
 }
 .container{
    /* background-image: url("celebration2.gif");*/
+   
     background-repeat:no-repeat;
     background-size:cover;
     border: 2px solid rgb(17, 4, 4);
